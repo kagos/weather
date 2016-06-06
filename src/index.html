@@ -17,13 +17,13 @@
     <h1>Weather</h1>
     <input type="text"
          ng-model="search"
-         ng-model-options="{ debounce: 800 }"
-         placeholder="Enter a Zip or Postal code" />
-    <div class="location">{{ details.current_observation.display_location.city }},
-      {{ details.current_observation.display_location.state_name }}</div>
-    <div class="icon"><img src="{{ details.current_observation.icon_url }}" /></div>
-    <div class="description">{{ details.current_observation.weather }}</div>
-    <div class="temperature">{{ details.current_observation.temperature_string }}</div>
+         ng-model-options="{ debounce: 1000 }"
+         placeholder="Enter a Zipcode" />
+    <div class="location">{{ current_observation.display_location.city }},
+      {{ current_observation.display_location.state_name }}</div>
+    <div class="icon"><img src="{{ current_observation.icon_url }}" /></div>
+    <div class="description">{{ current_observation.weather }}</div>
+    <div class="temperature">{{ current_observation.temperature_string }}</div>
   </div>
 </body>
 </html>
