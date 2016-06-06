@@ -19,20 +19,31 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div ng-app="weather" ng-controller="WeatherController as currentWeather" class="container">
-    <h1>Weather</h1>
-    <div class="col-md-4">
-      <input type="text"
-           ng-model="search"
-           ng-model-options="{ debounce: 1000 }"
-           placeholder="Enter a Zipcode" />
-      <div class="location">{{ formatted_address }}</div>
-    </div>
-    <div class="col-md-8">
-      <div class="icon col-md-2"><img src="{{ icon }}" /></div>
-      <div class="col-md-10">
-        <h2 class="description">{{ weather }}</h2>
-        <div class="temperature">{{ temperature }}</div>
+  <div ng-app="weather" ng-controller="WeatherController as currentWeather">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-inner">
+          <a class="navbar-brand" href="#">Weather-to-Weather</a>
+        </div>
+        <ul class="pull-right nav-search-container">
+          <li>
+            <input type="text"
+                 ng-model="search"
+                 ng-model-options="{ debounce: 1000 }"
+                 class="navbar-search"
+                 placeholder="Enter a Zipcode" />
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="col-md-10">
+      <div class="current-weather-template container-fluid" ng-repeat="city in cities">
+        <div class="icon-container col-md-1"><img src="{{ city.icon }}" /></div>
+        <div class="description-container col-md-11">
+          <p class="location">{{ city.formatted_address }}</p>
+          <p class="temperature">{{ city.temperature }}</p>
+          <p class="description">{{ city.weather }}</p>
+        </div>
       </div>
     </div>
   </div>
