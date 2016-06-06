@@ -5,9 +5,11 @@ angular.module('weather', [])
       if (initializing) {
         setTimeout(function() { initializing = false; }, 0);
       } else {
+        $scope.icon = "assets/spinner.gif";
         fetchCityState(val);
       }
-    });
+    }
+  );
 
     var fetchCityState = function(zip) {
       if(zip)
@@ -34,7 +36,7 @@ angular.module('weather', [])
           $scope.formatted_address = formatted_address;
           $scope.weather = response.data.current_observation.weather;
           $scope.temperature = response.data.current_observation.temperature_string;
-          $scope.icon = "http://icons.wxug.com/i/c/j/" + response.data.current_observation.icon + ".gif";
+          $scope.icon = "http://icons.wxug.com/i/c/k/" + response.data.current_observation.icon + ".gif";
         })
         .catch(function (err) {
           console.error('Error in fetchWeather');

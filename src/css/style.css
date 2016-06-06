@@ -1,7 +1,14 @@
 body {
-  background: #064789;
-  color: #fff;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
-body .location {
-  color: #fff;
+body .icon {
+  text-align: center;
+}
+body .icon img {
+  height: 80px;
+  width: auto;
+}
+body .description {
+  margin-top: 0px;
 }

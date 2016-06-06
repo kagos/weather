@@ -4,7 +4,7 @@
   "description": "A weather application",
   "main": "index.js",
   "scripts": {
-    "start": "grunt & nodemon server.js --hot"
+    "start": "grunt & nodemon server.js --hot --debug"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,8 @@
     "angular-less": "^1.0.0",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "nodemon": "^1.9.2"
+    "grunt-concurrent": "^2.3.0",
+    "grunt-nodemon": "^0.4.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",

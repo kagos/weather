@@ -10,22 +10,31 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+  <script src="js/lib/bootstrap.js"></script>
   <script src="js/weather.js"></script>
 
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div ng-app="weather" ng-controller="WeatherController as currentWeather">
+  <div ng-app="weather" ng-controller="WeatherController as currentWeather" class="container">
     <h1>Weather</h1>
-    <input type="text"
-         ng-model="search"
-         ng-model-options="{ debounce: 1000 }"
-         placeholder="Enter a Zipcode" />
-    <div class="location">{{ formatted_address }}</div>
-    <div class="icon"><img src="{{ icon }}" /></div>
-    <div class="description">{{ weather }}</div>
-    <div class="temperature">{{ temperature }}</div>
+    <div class="col-md-4">
+      <input type="text"
+           ng-model="search"
+           ng-model-options="{ debounce: 1000 }"
+           placeholder="Enter a Zipcode" />
+      <div class="location">{{ formatted_address }}</div>
+    </div>
+    <div class="col-md-8">
+      <div class="icon col-md-2"><img src="{{ icon }}" /></div>
+      <div class="col-md-10">
+        <h2 class="description">{{ weather }}</h2>
+        <div class="temperature">{{ temperature }}</div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
