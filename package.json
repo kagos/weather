@@ -1,0 +1,27 @@
+{
+  "name": "weather-app",
+  "version": "0.0.0",
+  "description": "A weather application",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kagos/weather.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "kagos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kagos/weather/issues"
+  },
+  "homepage": "https://github.com/kagos/weather#readme",
+  "dependencies": {
+    "angular": "^1.5.6",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
