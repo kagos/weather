@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="WeatherApp">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+  <script src="js/weather.js"></script>
+</head>
+<body>
+  <div ng-app="weather" ng-controller="WeatherController as currentWeather">
+    <h1>Weather</h1>
+    <input type="text"
+         ng-model="search"
+         ng-model-options="{ debounce: 800 }"
+         placeholder="Enter a Zip or Postal code" />
+    <div class="location">{{ details.current_observation.display_location.city }},
+      {{ details.current_observation.display_location.state_name }}</div>
+    <div class="icon"><img src="{{ details.current_observation.icon_url }}" /></div>
+    <div class="description">{{ details.current_observation.weather }}</div>
+    <div class="temperature">{{ details.current_observation.temperature_string }}</div>
+  </div>
+</body>
+</html>
