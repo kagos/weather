@@ -4,7 +4,7 @@
   "description": "A weather application",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js --hot"
+    "start": "grunt & nodemon server.js --hot"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,19 @@
   "homepage": "https://github.com/kagos/weather#readme",
   "dependencies": {
     "angular": "^1.5.6",
+    "angular-less": "^1.0.0",
     "body-parser": "^1.15.1",
-    "chai": "^3.5.0",
     "express": "^4.13.4",
-    "less": "^2.7.1",
-    "mocha": "^2.5.3",
     "nodemon": "^1.9.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "mocha": "^2.5.3"
   }
 }

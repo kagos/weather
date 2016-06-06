@@ -4,13 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="description" content="WeatherApp">
+
   <title>Weather App</title>
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
   <script src="js/weather.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div ng-app="weather" ng-controller="WeatherController as currentWeather">
@@ -19,11 +22,10 @@
          ng-model="search"
          ng-model-options="{ debounce: 1000 }"
          placeholder="Enter a Zipcode" />
-    <div class="location">{{ current_observation.display_location.city }},
-      {{ current_observation.display_location.state_name }}</div>
-    <div class="icon"><img src="{{ current_observation.icon_url }}" /></div>
-    <div class="description">{{ current_observation.weather }}</div>
-    <div class="temperature">{{ current_observation.temperature_string }}</div>
+    <div class="location">{{ formatted_address }}</div>
+    <div class="icon"><img src="{{ icon }}" /></div>
+    <div class="description">{{ weather }}</div>
+    <div class="temperature">{{ temperature }}</div>
   </div>
 </body>
 </html>
